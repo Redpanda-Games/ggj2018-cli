@@ -1,0 +1,20 @@
+#!/usr/bin/env php
+<?php
+
+require __DIR__.'/vendor/autoload.php';
+
+$application = new \App\Application();
+
+$application->add(new \App\Commands\CreditsCommand());
+
+$application->add(new \App\Commands\BootCommand());
+$application->add(new \App\Commands\StatusCommand());
+$application->add(new \App\Commands\ManCommand());
+$application->add(new \App\Commands\HackCommand());
+
+$application->add(new \App\Commands\ItemListCommand());
+$application->add(new \App\Commands\ItemBuyCommand());
+
+$application->add(new \App\Commands\SystemListCommand());
+
+$application->run();
